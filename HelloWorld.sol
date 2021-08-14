@@ -7,6 +7,15 @@ contract HelloWorld {
  owner = msg.sender;
  }
  
+  uint storedData;
+ 
+  function  set(uint x) public{
+    storedData = x;
+  }
+  function get() public constant returns (uint) {
+    return storedData;
+  }
+  
   function greet() external view returns (address) {
      if (msg.sender == owner) {
          //return strConcat(greetStr, " ", "boss111");
