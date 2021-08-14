@@ -14,9 +14,15 @@ contract HelloWorld {
      } 
   }
   
-  function balance() external view returns (uint256) {
+  function balance_sender() external view returns (uint256) {
      
          return owner.balance;
+    
+  }
+
+  function balance_this() external view returns (uint256) {
+     
+         return address(this).balance;
     
   }
 
