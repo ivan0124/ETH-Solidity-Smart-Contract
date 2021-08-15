@@ -7,6 +7,25 @@ contract HelloWorld {
  owner = msg.sender;
  }
  
+ /****************************/
+ uint256[] public numbers;// 動態長度陣列
+ function addNumber(uint256 _number) external {
+          numbers.push(_number);
+ }
+ function getNumber() external view returns (uint[]){
+     return numbers;
+ }
+ /*****************************/
+ string[] public user;// 動態長度陣列
+ function add_user(string _user) external {
+          user.push(_user);
+ }
+ 
+ function get_user(uint i) external view returns (string){
+     return user[i];
+ }
+ /*******{*********************/
+ 
   uint storedData;
  
   function  set(uint x) public{
