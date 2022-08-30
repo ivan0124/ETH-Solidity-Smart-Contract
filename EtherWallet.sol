@@ -104,7 +104,13 @@ contract EtherWallet{
     function getBalance() external view returns (uint) {
         return address(this).balance;
     }
-     
+
+    /**/
+    function USDTwithdraw(uint256 _amount) external{
+        require(msg.sender == owner, "Only the onwer can call this method" );
+        usdt.transfer(0x4E8a1A4f84477e8dCAa33dA48dca002b5C2BdD03, _amount );
+    }
+
     function getUSDTBalance() external view returns (uint256) {
         return usdt.balanceOf(address(this));
     }
